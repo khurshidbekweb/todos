@@ -62,7 +62,7 @@ function editTodo(id){
 modForm.addEventListener("submit", (e)=>{
     e.preventDefault();            
     let todoText = modInput.value.trim();        
-    todos.splice(todoInpId, 1, {text: todoText, time: "14:15", complate: false})
+    todos.splice(todoInpId, 1, {text: todoText, time: getTime(), complate: false})
     if(todoText.length){
         setTodo();        
         showTodo(); 
@@ -71,8 +71,7 @@ modForm.addEventListener("submit", (e)=>{
         showMesseg(".worningMod", "Please, enter thr text")
     }
     modForm.reset();                    
-}) 
-
+});
 // ========================= Close modal ==================================
 modChange.addEventListener("click",cloce)
 // ========================= complate event ===============================
@@ -90,21 +89,19 @@ function complate(id){
     setTodo()
     showTodo()
 }
-headerTimes.innerHTML = `
-    <h3 class="text-center"><strong>Today</strong>: ${headerTime()}</h3>
-    <h5 class="text-center">${onTime()}</h5>
-`
+
 
 function onTime(){
     let now = new Date();
     let hours = now.getHours();
     let minutes = now.getMinutes() < 10 ? "0" + `${now.getMinutes()}` : now.getMinutes();
     let secund = now.getSeconds() < 10 ? "0" + `${now.getSeconds()}` : now.getSeconds();
-
-    return  `${hours}:${minutes}:${secund}`
+    headerTimes.innerHTML = `
+    <h3 class="text-center"><strong>Today</strong>: ${headerTime()}</h3>
+    <h5 class="text-center">${hours}:${minutes}:${secund}</h5>
+`
 }
-onTime();
-
+// onTime();
 setInterval(onTime, 1000);
 
 
