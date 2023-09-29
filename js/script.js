@@ -93,7 +93,7 @@ function complate(id){
 
 function onTime(){
     let now = new Date();
-    let hours = now.getHours();
+    let hours = now.getHours() < 10 ? "0" + `${now.getHours()}` : now.getHours();
     let minutes = now.getMinutes() < 10 ? "0" + `${now.getMinutes()}` : now.getMinutes();
     let secund = now.getSeconds() < 10 ? "0" + `${now.getSeconds()}` : now.getSeconds();
     headerTimes.innerHTML = `
