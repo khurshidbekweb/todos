@@ -27,14 +27,14 @@ function showTodo(){
     elList.innerHTML = " ";
     todos.forEach((itm, i)=>{        
         elList.innerHTML += `
-        <li ondblclick = (complate(${i})) class = "item w-100 p-2 px-5 d-flex justify-content-between align-items-center ${
+        <li ondblclick = (complate(${i})) class = "item col-sm-12 col-md-10 fs-sm-6 w-100 p-2 px-5 d-flex justify-content-between align-items-center ${
             itm.complate == true ? "complate" : ""} ">
                     <h4 class="text user-select-none">${itm.text}</h4>
-                    <div class="btnaaa d-flex justify-content-between align-items-center">
-                        <p class="timeUZ mx-2" >${itm.time}</p>
-                        <div>
+                    <div class="btnaaa d-flex justify-content-evenly">
+                        <p class="timeUZ" >${itm.time}</p>
+                        <div class = "d-flex justify-content-between align-items-center">
                         <img onclick = (editTodo(${i})) class="text-info px-3 bg-info p-2 rounded-2" src="./img/pencil.svg" alt="pensel">
-                        <img onclick = (delateTodo(${i})) class="px-3 bg-danger p-2 rounded-2" src="./img/delete.svg" alt="delete">
+                        <img onclick = (delateTodo(${i})) class="px-3 bg-danger mx-1 p-2 rounded-2" src="./img/delete.svg" alt="delete">
                         </div>
                     </div>
         </li>
