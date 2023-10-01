@@ -27,7 +27,7 @@ body {
 #modalWrp{
     position: fixed;
     z-index: 6999;
-    max-width: 400px !important;
+    max-width: 450px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
